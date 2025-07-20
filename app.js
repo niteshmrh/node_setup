@@ -1,12 +1,23 @@
 require('dotenv').config();
 const express = require('express');
-const mysql = require('./config/datsbase');
-
+const mongoose = require('mongoose')
+const database = require('./config/database');
 
 
 
 const app = express();
 
+// Mongoose Connection
+mongoose.connect(database.mongodb.uri);
+mongoose.Promise = global.Promise;
+
+mongoose.connection.on('connected', ()=>{
+    console.log("MongoDB is connected");
+});
+
+mongoose.connection.on('error', ()=>{
+    console.log("Error in MongoDB ", error);
+});
 
 const server = app.listen(process.env.PORT, ()=>{
     const address = server.address();
