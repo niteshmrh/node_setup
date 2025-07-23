@@ -6,7 +6,7 @@ module.exports = {
         uri : process.env.MONGOSE_DB_PARAMETER
     },
     sql : mysqlPoolConnect(process.env.HOST, process.env.USER, process.env.PASSWORD, process.env.DB_NAME1),
-    sql : mysqlPoolConnect(process.env.HOST, process.env.USER, process.env.PASSWORD, process.env.DB_NAME2),
+    // sql : mysqlPoolConnect(process.env.HOST, process.env.USER, process.env.PASSWORD, process.env.DB_NAME2),
 }
 
 
